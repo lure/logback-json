@@ -66,6 +66,7 @@ class JsonLayout : LayoutBase<ILoggingEvent>() {
 
     /**
      * Set comma-separated list of the only values permitted to be added from the MDC.
+     * If no filter has been added then everything from MDC will be added to log. 
      * Usage scenario is to filter out some sensible information.
      */
     fun setFilterMDCFields(value: String) {
