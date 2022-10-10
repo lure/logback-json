@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <charset>UTF-8</charset>
+            <layout class="eu.shubert.log.JsonLayout">
+                <!-- filter out all but provided mdc params -->
+                <filterMDCFields>app,application.name</filterMDCFields>
+                <!--  additional log info providers, for example it may provide the app-wide info (app version, app name and so on) -->
+                <additionalProvider>eu.shubert.Abc</additionalProvider>
+            </layout>
+        </encoder>
+    </appender>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
